@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build and run Raylib Launcher",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "gcc -Wall -Wextra -g3 $(find \"${workspaceFolder}/src\" -name '*.c' -print) -o \"${workspaceFolder}/src/output/main\" -I/opt/homebrew/Cellar/raylib/5.5/include -L/opt/homebrew/Cellar/raylib/5.5/lib -lraylib -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo && \"${workspaceFolder}/src/output/main\""
+            ],
+            "options": {
+                "shell": {
+                    "executable": "/bin/bash",
+                    "args": ["-c"]
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
